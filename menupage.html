@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Demo | page</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/index.css">
+  <script type="text/javascript" src="js/angular.min.js"></script>
+  </head>
+  <body ng-app="myApp" >
+     <div ng-controller="myCtrl">
+     
+     <div class="footer">
+     <div class="container-fluid">
+     <div class="col-lg-2 first-menu" ng-repeat="data in secondMenu">
+      {{data.name}}
+    </div>
+</div>
+</div><br>
+</div>
+    
+<script src="js/jquery-2.1.4.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+</body>
+</html>

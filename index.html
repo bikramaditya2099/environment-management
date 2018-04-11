@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Demo | page</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/index.css">
+  <script type="text/javascript" src="js/angular.min.js"></script>
+  </head>
+  <body ng-app="myApp">
+     <div ng-controller="myCtrl">
+     <nav class="navbar navbar-default" data-spy="affix" data-offset-top="197">
+  <div class="container-fluid fixed-top">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <img src="images/2.png" class="img-responsive navbar-brand">
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav" ng-repeat="data in menu">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{data.name}} <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">One more separated link</a></li>
+          </ul>
+        </li>
+      </ul>
+      <form class="navbar-form navbar-right" role="search">
+  <div class="form-group">
+    <input type="text" class="form-control" placeholder="Email" ng-model="user.name" ng-disabled="{{otp}}">
+    <input type="Password" class="form-control" placeholder="Password" ng-model="user.password">
+    <input type="text" class="form-control" placeholder="Enter pin"> 
+
+    <button ng-click="angularAlert()">Log in</button>
+  </div>
+</form>
+      
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+<!-- <div class="container-fluid">
+    <div class="col-lg-2 first-menu" ng-repeat="data in secondMenu">
+      {{data.name}}
+    </div>
+</div><br>
+ -->
+ <div class="container-fluid back-img">
+   <div class="col-lg-6 col-xs-12 col-md-6 col-sm-6">
+    <img src="images/1.png" class="img-responsive img-1">
+   </div>
+   <div class="col-lg-6 col-xs-12 col-md-6 col-sm-6 text-2">
+    <button class="form-control input-5">Facebook</button>
+    <button class="form-control input-6">Google+</button><br><br>
+    <div class="form-group">
+        <label for="inputName3" class="control-label input-4">Full name</label>
+        <!-- <div class="col-sm-4"> -->
+          <input class="form-control input-3" id="inputName3" placeholder="Name">
+        <!-- </div> -->
+      </div>
+    <div class="form-group">
+        <label for="inputName3" class="control-label input-4">Birthdate</label>
+        
+      <select class="form-control input-2">
+      <option ng-repeat="item in optionMenu"  >{{item.month}}</option>
+      </select>
+        <select class="form-control input-2">
+      <option ng-repeat="item in dayMenu" >{{item.day}}</option>
+    </select>
+    <select class="form-control input-2">
+      <option ng-repeat="item in yearMenu" >{{item.year}}</option>
+    </select><br><br>
+    <div class="btn-group but-1"><label class="btn btn-default iam-options" ><input type="radio" name="gender"  value="male" data-ng-model="user.gender" >Man</label> 
+    <label class="btn btn-default iam-options" data-ng-class="{'active': user.gender === 'female'}"><input type="radio" name="gender">Woman</label>
+    </div><br><br>
+    <button class="form-control input-7">SIGN UP</button>
+      </div>
+  </div>
+</div>
+<div class="container-fluid color-2">
+  <div class="col-lg-12 col-xs-12 col-md-12">
+    <h2 class="text-1">Welcome to Skout</h2><br>
+    <p class="text-1">With millions of users all over the world, Skout gives you the ability to connect with people no <br> matter where you are.
+    </p>
+  </div>
+</div><br><br>
+<div class="container">
+  <div class="col-lg-4 col-sm-4">
+    <img src="images/3.png" class="img-responsive">
+  </div>
+  <div class="col-lg-8 col-sm-8">
+    <h2>Meet New People</h2><br>
+    <p>A meaningful glance on the train. A "me too" moment at a club. An <br> instant connection. At Skout, we're all about preserving the magic of <br>unexpected meetings that lead to discovering new people. From <br> friendships to romance, Skout has been connecting people since 2007. <br> The world has no limits, so why should you?</p>
+  </div>
+</div><br><br>
+<div class="container-fluid color-1">
+  <div class="col-lg-4 col-sm-4">
+    <img src="images/5.png" class="img-responsive img-3">
+    <h2 class="img-2">Chat</h2>
+    <p class="img-2">Chat with new people near <br>you or a world away.<br> Millions of messages are <br>sent every day on Skout!</p>
+  </div>
+  <div class="col-lg-4 col-sm-4">
+  <img src="images/6.png" class="img-responsive img-3">
+  <h2 class="img-2">Interested</h2>
+  <p class="img-2">Who will you meet? Browse <br> through people near you <br> and make connections fast.<br> Meet a friend, a date, or<br> even your future spouse!</p>
+  </div>
+  <div class="col-lg-4 col-sm-4">
+  <img src="images/7.png" class="img-responsive img-3">
+  <h2 class="img-2">Buzz</h2>
+  <p class="img-2">What are people talking<br> about near you? Make <br>connections in the Skout<br> community.</p>
+  </div>
+</div><br>
+<!-- <div class="footer">
+  <div class="container-fluid">
+    <div class="col-lg-2 first-menu" ng-repeat="data in secondMenu">
+      {{data.name}}
+    </div>
+</div>
+</div> --><br>
+</div>
+    
+<script src="js/jquery-2.1.4.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+</body>
+</html>
