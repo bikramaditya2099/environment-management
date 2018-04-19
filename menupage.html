@@ -7,19 +7,62 @@
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/index.css">
   <script type="text/javascript" src="js/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
   </head>
   <body ng-app="myApp" >
+  <a href="#!about">About</a>
+  <a href="#!contactus">Contact Us</a>
+  <a href="#!terms">Terms</a>
+  <a href="#!privacy">Privacy</a> 
+  <a href="#!interest">Interest</a> 
+<div ng-view></div>
      <div ng-controller="myCtrl">
-     
-     <div class="footer">
+     <br>
+     <div class="header">
      <div class="container-fluid">
      <div class="col-lg-2 first-menu" ng-repeat="data in secondMenu">
       {{data.name}}
     </div>
-</div>
-</div><br>
-</div>
-    
+  </div>
+  </div><br>
+   <div class="form-group">
+        <label for="inputName3" class="control-label ">Type here....</label>
+          <input class="form-control input-3" id="inputName3" placeholder="Search Field" ng-model="searchName">
+          <button class="btn btn-primary" ng-click="doSearch()">Search</button>
+      </div>
+    <table class="table table-striped table-bordered">
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Address</th>
+        <th>Department</th>
+        <th>Salary</th>
+        <th>Date</th>
+        <th>DOB</th>
+        <th>Phone no</th>
+      </tr>
+      <tr ng-repeat="data in tableMenu ">
+            <!-- <tr ng-repeat="data in tableMenu | filter: {name:'m', age:'20'}"> -->
+        <td>{{data.id}}</td>
+        <td>{{data.name | myFilter:searchName}}</td>
+        <td>{{data.age }}</td>
+        <td>{{data.address}}</td>
+        <td>{{data.department}}</td>
+        <td>{{data.sal | currency : symbol : fractionSize}}
+        <span ng-show="sal > 7000" <i class="fa fa-warning" style="font-size:20px;color:red"></i></span>
+        </td>
+
+        <td>{{data.date | date : format : timezone}}</td>
+        <td>{{data.dob | date:'medium'}}</td>
+        <td>{{data.phno | number : fractionSize}}</td>
+
+
+      </tr>
+    </table>
+  </div>
+
+
 <script src="js/jquery-2.1.4.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script type="text/javascript" src="js/index.js"></script>
