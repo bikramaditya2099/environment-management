@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/index.css">
   <script type="text/javascript" src="js/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
   </head>
   <body ng-app="myApp">
      <div ng-controller="myCtrl">
@@ -35,11 +36,11 @@
       </ul>
       <form class="navbar-form navbar-right" role="search">
   <div class="form-group">
-    <input type="text" class="form-control" placeholder="Email" ng-model="user.name" ng-disabled="{{otp}}">
-    <input type="Password" class="form-control" placeholder="Password" ng-model="user.password">
-    <input type="text" class="form-control" placeholder="Enter pin"> 
+    <input type="text" class="form-control" placeholder="Email" ng-model="user.name" ng-disabled="otp">
+    <input type="Password" class="form-control" placeholder="Password" ng-model="user.password" ng-disabled="otp">
+    <input type="text" class="form-control" ng-model="user.otp" placeholder="Enter pin" ng-if="isSuccessLogin"> 
 
-    <button ng-click="angularAlert()">Log in</button>
+    <button class="btn btn-default" ng-click="angularAlert()">Log in</button>
   </div>
 </form>
       
